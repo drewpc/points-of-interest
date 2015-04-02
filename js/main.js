@@ -10,6 +10,7 @@ jQuery(document).ready(function ($) {
             newPosition = {};
 
         if ($target.length > 0) {
+            $target = $target.first();
             targetLocation = $target.offset();
             targetWidth = $target.width();
             targetHeight = $target.height();
