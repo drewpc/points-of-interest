@@ -7,6 +7,8 @@ jQuery(document).ready(function ($) {
             targetLocation,
             targetWidth,
             targetHeight,
+            pointWidth,
+            pointHeight,
             newPosition = {};
 
         if ($target.length > 0) {
@@ -14,6 +16,9 @@ jQuery(document).ready(function ($) {
             targetLocation = $target.offset();
             targetWidth = $target.outerWidth(false);
             targetHeight = $target.outerHeight(false);
+
+            pointWidth = $point.outerWidth(false);
+            pointHeight = $point.outerHeight(false);
 
             newPosition = targetLocation;
 
@@ -41,6 +46,9 @@ jQuery(document).ready(function ($) {
                         break;
                 }
             });
+
+            newPosition.left -= pointWidth / 2;
+            newPosition.top -= pointHeight / 2;
 
             $point.offset(newPosition);
 
