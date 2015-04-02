@@ -39,28 +39,7 @@ Main components
 
 .cd-single-point {
   position: absolute;
-  border-radius: 50%;
-    /*
-	&:nth-of-type(1) { // set these positions of interest points according to your product image
-		bottom: 40%;
-		right: 30%;
-	}
-
-	&:nth-of-type(2) {
-		bottom: 24%;
-		right: 46%;
-	}
-
-	&:nth-of-type(3) {
-		top: 28%;
-		left: 20%;
-	}
-
-	&:nth-of-type(4) {
-		top: 20%;
-		right: 22%;
-	}
-	*/ }
+  border-radius: 50%; }
   .cd-single-point > a {
     position: relative;
     z-index: 2;
