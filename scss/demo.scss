@@ -1,0 +1,40 @@
+@import 'bourbon/bourbon'; // http://bourbon.io/
+
+@import '../partials/variables'; // colors, fonts etc...
+
+@import '../partials/mixins'; // custom mixins
+
+@import '../partials/layout'; // responsive grid and media queries
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+    @include box-sizing(border-box);
+}
+
+body {
+    font: {
+        size: 100%;
+        family: $primary-font; // variables inside partials > _variables.scss
+    }
+    color: $color-1;
+    background-color: lighten($color-1, 5%);
+}
+
+a {
+    color: $color-4;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
