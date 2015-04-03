@@ -150,6 +150,7 @@ if ( typeof define === 'function' && define.amd ) {
 
             poi.point = $(pointElement);
             poi.target = null;
+            poi.targetRefreshCount = 0;
             poi.options = $.extend(true, {}, poi.options, options);
             poi._init();
         }
@@ -167,7 +168,10 @@ if ( typeof define === 'function' && define.amd ) {
                 'target': 'cd-target',
                 'pointLocation': 'cd-point-location'
             },
-            pointLocation: "right top"
+            pointLocation: "right top",
+            waitForImageLoad: true,
+            autoShowPoints: true,
+            targetRefreshInterval: 10 // in milliseconds
         };
 
 // main plugin logic
@@ -187,12 +191,25 @@ if ( typeof define === 'function' && define.amd ) {
         PointOfInterest.prototype.setPointLocation = function () {
             "use strict";
             var poi = this,
+                imgs,
                 targetLocation = poi.target.offset(),
                 pointLocation = poi.point.offset(),
                 pointLocationWords = poi.point.data(poi.options.dataValues.pointLocation).split(" ");
 
             targetLocation.width = poi.target.outerWidth(false);
             targetLocation.height = poi.target.outerHeight(false);
+
+            if (poi.options.waitForImageLoad === true) {
+                imgs = poi.target.find('img');
+                if ((targetLocation.width === 0 || targetLocation.height === 0) &&
+                    imgs.length > 0 &&
+                    poi.targetRefreshCount < 5) {
+
+                    poi.targetRefreshCount++;
+                    setTimeout(poi.setPointLocation.bind(poi), poi.options.targetRefreshInterval);
+                    return;
+                }
+            }
 
             pointLocation.left = targetLocation.left;
             pointLocation.top = targetLocation.top;
@@ -230,6 +247,10 @@ if ( typeof define === 'function' && define.amd ) {
                 left: pointLocation.left,
                 top: pointLocation.top
             });
+
+            if (poi.options.autoShowPoints === true) {
+                poi.show();
+            }
         };
 
         PointOfInterest.prototype.hide = function () {
