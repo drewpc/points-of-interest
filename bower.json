@@ -8,7 +8,7 @@
     "description": "A resource to highlight the points of interest of your products. Just a click to open a brief description of each point, allowing your user to get a deep and fast understanding of your product features.",
     "main": [
         "dist/points-of-interest.min.css",
-        "dist/points-of-interest.min.js"
+        "dist/points-of-interest.pkgd.min.js"
     ],
     "keywords": [
         "CodyHouse",
