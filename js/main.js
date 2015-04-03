@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
             newPosition = targetLocation;
 
             pointLocation = $point.data("cd-point-location").split(" ");
-            pointLocation.forEach(function (val) {
+            $.each(pointLocation, function (index, val) {
                 switch (val) {
                     case "left":
                         // do nothing, already set.
