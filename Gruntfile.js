@@ -39,10 +39,13 @@ module.exports = function (grunt) {
                     style: 'expanded',
                     sourcemap: 'none'
                 },
-                files: {
-                    'dist/points-of-interest.css': 'scss/style.scss',
-                    'dist/demo.css': 'scss/demo.scss'
-                }
+                files: [{
+                    expand: true,
+                    cwd: './scss',
+                    src: ['*.scss'],
+                    dest: './dist',
+                    ext: '.css'
+                }]
             },
             'dist-compressed': {
                 options: {
@@ -50,7 +53,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'dist/points-of-interest.min.css': 'scss/style.scss'
+                    'dist/points-of-interest.min.css': 'scss/points-of-interest.scss'
                 }
             }
         }
