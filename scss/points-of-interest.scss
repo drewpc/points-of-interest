@@ -34,22 +34,6 @@ Main components
 
 -------------------------------- */
 
-.cd-product {
-	text-align: center;
-}
-
-.cd-product-wrapper {
-	display: inline-block;
-	position: relative;
-	margin: 0 auto;
-	width: 100%;
-	max-width: 450px;
-
-	> img {
-		display: block;
-	}
-}
-
 .cd-single-point {
 	position: absolute;
 	border-radius: 50%;
@@ -205,15 +189,6 @@ Main components
 		border: 8px solid transparent;
 	}
 
-	h2 {
-		@include font-size(22px);
-		margin-bottom: .6em;
-	}
-
-	p {
-		color: lighten($color-1, 30%);
-	}
-
 	@include MQ(S) {
 		position: absolute;
 		width: 220px;
@@ -280,15 +255,6 @@ Main components
 				border-bottom-color: rgba($color-5, .95);
 				bottom: 100%;
 			}
-		}
-
-		h2 {
-			@include font-size(20px);
-			margin-bottom: 0;
-		}
-
-		p {
-			@include font-size(14px);
 		}
 	}
 }

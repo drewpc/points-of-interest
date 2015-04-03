@@ -28,21 +28,6 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-.cd-product {
-  text-align: center;
-}
-
-.cd-product-wrapper {
-  display: inline-block;
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 450px;
-}
-.cd-product-wrapper > img {
-  display: block;
-}
-
 .cd-single-point {
   position: absolute;
   border-radius: 50%;
@@ -232,14 +217,6 @@ Main components
   display: none;
   border: 8px solid transparent;
 }
-.cd-single-point .cd-more-info h2 {
-  font-size: 22px;
-  font-size: 1.375rem;
-  margin-bottom: .6em;
-}
-.cd-single-point .cd-more-info p {
-  color: #758eb1;
-}
 @media only screen and (min-width: 600px) {
   .cd-single-point .cd-more-info {
     position: absolute;
@@ -319,15 +296,6 @@ Main components
   .cd-single-point .cd-more-info.cd-bottom::before {
     border-bottom-color: rgba(255, 255, 255, 0.95);
     bottom: 100%;
-  }
-  .cd-single-point .cd-more-info h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
-    margin-bottom: 0;
-  }
-  .cd-single-point .cd-more-info p {
-    font-size: 14px;
-    font-size: 0.875rem;
   }
 }
 

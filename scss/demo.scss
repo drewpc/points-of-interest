@@ -52,3 +52,41 @@ header {
         font-weight: 300;
     }
 }
+
+.cd-product {
+    text-align: center;
+}
+
+.cd-product-wrapper {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+
+    > img {
+        display: block;
+    }
+}
+
+.cd-single-point .cd-more-info {
+    h2 {
+        @include font-size(22px);
+        margin-bottom: .6em;
+    }
+
+    p {
+        color: lighten($color-1, 30%);
+    }
+
+    @include MQ(S) {
+        h2 {
+            @include font-size(20px);
+            margin-bottom: 0;
+        }
+
+        p {
+            @include font-size(14px);
+        }
+    }
+}
