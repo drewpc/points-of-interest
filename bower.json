@@ -1,30 +1,33 @@
 {
-  "name": "points-of-interest",
-  "version": "0.1.0",
-  "homepage": "http://codyhouse.co/gem/points-of-interest/",
-  "authors": [
-    "PC Drew <pc@soprisapps.com>"
-  ],
-  "description": "A resource to highlight the points of interest of your products. Just a click to open a brief description of each point, allowing your user to get a deep and fast understanding of your product features.",
-  "main": [
-    "dist/points-of-interest.min.css",
-    "dist/points-of-interest.min.js"
-  ],
-  "keywords": [
-    "CodyHouse",
-    "points of interest"
-  ],
-  "license": "http://codyhouse.co/terms/",
-  "private": true,
-  "dependencies": {
-    "jquery": "~1.11",
-    "modernizr": "~2.8"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "name": "points-of-interest",
+    "version": "0.1.0",
+    "homepage": "http://codyhouse.co/gem/points-of-interest/",
+    "authors": [
+        "PC Drew <pc@soprisapps.com>"
+    ],
+    "description": "A resource to highlight the points of interest of your products. Just a click to open a brief description of each point, allowing your user to get a deep and fast understanding of your product features.",
+    "main": [
+        "dist/points-of-interest.min.css",
+        "dist/points-of-interest.min.js"
+    ],
+    "keywords": [
+        "CodyHouse",
+        "points of interest"
+    ],
+    "license": "http://codyhouse.co/terms/",
+    "private": true,
+    "dependencies": {
+        "jquery": "~1.11",
+        "modernizr": "~2.8"
+    },
+    "devDependencies": {
+        "jquery-bridget": "~1.1"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
 }

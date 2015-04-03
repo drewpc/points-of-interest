@@ -1,0 +1,27 @@
+{
+    "name": "points-of-interest",
+    "version": "0.1.0",
+    "description": "A resource to highlight the points of interest of your products. Just a click to open a brief description of each point, allowing your user to get a deep and fast understanding of your product features.",
+    "main": "js/packery.js",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "jquery": "~1.11",
+        "jquery-bridget": "~1.1",
+        "qunitjs": "^1.15",
+        "grunt": "~0.4.0",
+        "grunt-contrib-uglify": "~0.1.1",
+        "grunt-requirejs": "~0.4.0",
+        "grunt-contrib-sass": "~0.9"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:drewpc/points-of-interest.git"
+    },
+    "keywords": [
+        "CodyHouse",
+        "points of interest"
+    ],
+    "author": "PC Drew / Sopris Apps & CodyHouse.co",
+    "homepage": "http://codyhouse.co/gem/points-of-interest/"
+}
