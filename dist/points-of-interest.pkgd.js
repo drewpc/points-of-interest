@@ -232,6 +232,18 @@ if ( typeof define === 'function' && define.amd ) {
             });
         };
 
+        PointOfInterest.prototype.hide = function () {
+            "use strict";
+            var poi = this;
+            poi.point.hide();
+        };
+
+        PointOfInterest.prototype.show = function () {
+            "use strict";
+            var poi = this;
+            poi.point.show();
+        };
+
         PointOfInterest.prototype.registerPointEvents = function () {
             "use strict";
             var poi = this;

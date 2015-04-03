@@ -69,7 +69,10 @@
 <script src="dist/points-of-interest.pkgd.js"></script> <!-- Resource jQuery -->
 <SCRIPT TYPE="text/javascript">
     jQuery(document).ready(function ($) {
-        $('.cd-single-point').pointOfInterest();
+        var points = $('.cd-single-point');
+
+        points.pointOfInterest();
+        points.first().pointOfInterest('hide');
     });
 </SCRIPT>
 </body>
