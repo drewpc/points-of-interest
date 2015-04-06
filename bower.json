@@ -20,9 +20,6 @@
         "jquery": "~1.11",
         "modernizr": "~2.8"
     },
-    "devDependencies": {
-        "jquery-bridget": "~1.1"
-    },
     "ignore": [
         "**/.*",
         "node_modules",

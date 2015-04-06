@@ -13,7 +13,7 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: './',
                     include: [
-                        'bower_components/jquery-bridget/jquery.bridget',
+                        'node_modules/jquery-bridget/jquery.bridget.js',
                         'js/points-of-interest.js'
                     ],
                     out: 'dist/points-of-interest.pkgd.js',

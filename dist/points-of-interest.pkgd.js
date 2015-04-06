@@ -128,7 +128,7 @@ return $.bridget;
 // transport
 if ( typeof define === 'function' && define.amd ) {
   // AMD
-  define( 'bower_components/jquery-bridget/jquery.bridget',[ 'jquery' ], defineBridget );
+  define( 'node_modules/jquery-bridget/jquery.bridget.js',[ 'jquery' ], defineBridget );
 } else if ( typeof exports === 'object' ) {
   defineBridget( require('jquery') );
 } else {
@@ -139,7 +139,7 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 
 /*jslint browser: true*/
-/*global $, jQuery, alert*/
+/*global $, jQuery, alert, eventie */
 
 (function(window) {
     function poiDefinition() {
