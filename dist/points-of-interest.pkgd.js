@@ -269,6 +269,7 @@ if ( typeof define === 'function' && define.amd ) {
             "use strict";
             var poi = this;
 
+            poi.point.on('poi.set-point-location', poi.setPointLocation.bind(poi));
             poi.point.children('a').on('click', poi.pointOpenEvent.bind(poi));
             poi.point.find('.' + poi.options.selectors.closeClass).on('click', poi.pointCloseEvent.bind(poi));
         };
