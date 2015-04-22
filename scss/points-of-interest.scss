@@ -172,7 +172,7 @@ Main components
 	text-align: left;
 	line-height: 1.5;
 
-	background-color: rgba($color-5, .95);
+    background: -webkit-linear-gradient(top, $gradient-color1, $gradient-color2);
 	padding: 2em 1em 1em;
 
 	visibility: hidden;
@@ -217,7 +217,7 @@ Main components
 			left: auto;
 
 			&::before {
-				border-left-color: rgba($color-5, .95);
+				border-left-color: $gradient-color1;
 				left: 100%;
 			}
 		}
@@ -226,7 +226,7 @@ Main components
 			left: 160%;
 
 			&::before {
-				border-right-color: rgba($color-5, .95);
+				border-right-color: $gradient-color1;
 				right: 100%;
 			}
 		}
@@ -244,7 +244,7 @@ Main components
 			top: auto;
 
 			&::before {
-				border-top-color: rgba($color-5, .95);
+				border-top-color: $gradient-color1;
 				top: 100%;
 			}
 		}
@@ -253,7 +253,7 @@ Main components
 			top: 160%;
 
 			&::before {
-				border-bottom-color: rgba($color-5, .95);
+				border-bottom-color: $gradient-color1;
 				bottom: 100%;
 			}
 		}

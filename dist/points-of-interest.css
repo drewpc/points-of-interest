@@ -196,7 +196,7 @@ Main components
   -webkit-overflow-scrolling: touch;
   text-align: left;
   line-height: 1.5;
-  background-color: rgba(255, 255, 255, 0.95);
+  background: -webkit-linear-gradient(top, #fff8cc, #FFF0BD);
   padding: 2em 1em 1em;
   visibility: hidden;
   opacity: 0;
@@ -255,14 +255,14 @@ Main components
     left: auto;
   }
   .cd-single-point .cd-more-info.cd-left::before {
-    border-left-color: rgba(255, 255, 255, 0.95);
+    border-left-color: #fff8cc;
     left: 100%;
   }
   .cd-single-point .cd-more-info.cd-right {
     left: 160%;
   }
   .cd-single-point .cd-more-info.cd-right::before {
-    border-right-color: rgba(255, 255, 255, 0.95);
+    border-right-color: #fff8cc;
     right: 100%;
   }
   .cd-single-point .cd-more-info.cd-top, .cd-single-point .cd-more-info.cd-bottom {
@@ -288,14 +288,14 @@ Main components
     top: auto;
   }
   .cd-single-point .cd-more-info.cd-top::before {
-    border-top-color: rgba(255, 255, 255, 0.95);
+    border-top-color: #fff8cc;
     top: 100%;
   }
   .cd-single-point .cd-more-info.cd-bottom {
     top: 160%;
   }
   .cd-single-point .cd-more-info.cd-bottom::before {
-    border-bottom-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: #fff8cc;
     bottom: 100%;
   }
 }
