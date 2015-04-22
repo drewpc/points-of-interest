@@ -41,7 +41,7 @@ Main components
 
 	> a {
 		position: relative;
-		z-index: 2;
+		z-index: 30002;
 		display: block;
 		width: 30px;
 		height: 30px;
@@ -75,7 +75,7 @@ Main components
 		/* this is used to create the pulse animation */
 		content: '';
 		position: absolute;
-		z-index: 1;
+		z-index: 30001;
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -163,7 +163,7 @@ Main components
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 30000;
+	z-index: 30003;
 	width: 100%;
 	height: 100%;
 	overflow-y: auto; 
