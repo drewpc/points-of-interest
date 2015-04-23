@@ -182,19 +182,27 @@ if ( typeof define === 'function' && define.amd ) {
 
             if (target.length > 0) {
                 poi.target = target.first();
-            }
 
-            poi.setPointLocation();
-            poi.registerPointEvents();
+                poi.setPointLocation();
+                poi.registerPointEvents();
+            }
         };
 
         PointOfInterest.prototype.setPointLocation = function () {
             "use strict";
             var poi = this,
                 imgs,
-                targetLocation = poi.target.offset(),
-                pointLocation = poi.point.offset(),
+                targetLocation,
+                pointLocation,
+                pointLocationWords;
+
+            if (poi.target === null || poi.point === null) {
+                return;
+            } else {
+                targetLocation = poi.target.offset();
+                pointLocation = poi.point.offset();
                 pointLocationWords = poi.point.data(poi.options.dataValues.pointLocation).split(" ");
+            }
 
             targetLocation.width = poi.target.outerWidth(false);
             targetLocation.height = poi.target.outerHeight(false);
@@ -256,36 +264,46 @@ if ( typeof define === 'function' && define.amd ) {
         PointOfInterest.prototype.hide = function () {
             "use strict";
             var poi = this;
-            poi.point.hide();
+
+            if (poi.point !== null) {
+                poi.point.hide();
+            }
         };
 
         PointOfInterest.prototype.show = function () {
             "use strict";
             var poi = this;
-            poi.point.show();
+
+            if (poi.point !== null) {
+                poi.point.show();
+            }
         };
 
         PointOfInterest.prototype.registerPointEvents = function () {
             "use strict";
             var poi = this;
 
-            poi.point.on('poi.set-point-location', poi.setPointLocation.bind(poi));
-            poi.point.children('a').on('click', poi.pointOpenEvent.bind(poi));
-            poi.point.find('.' + poi.options.selectors.closeClass).on('click', poi.pointCloseEvent.bind(poi));
+            if (poi.point !== null) {
+                poi.point.on('poi.set-point-location', poi.setPointLocation.bind(poi));
+                poi.point.children('a').on('click', poi.pointOpenEvent.bind(poi));
+                poi.point.find('.' + poi.options.selectors.closeClass).on('click', poi.pointCloseEvent.bind(poi));
+            }
         };
 
         PointOfInterest.prototype.pointOpenEvent = function (event) {
             "use strict";
             var poi = this;
 
-            if (poi.point.hasClass(poi.options.selectors.openClass)) {
-                poi.point.removeClass(poi.options.selectors.openClass)
-                         .addClass(poi.options.selectors.visitedClass);
-            } else {
-                poi.point.addClass(poi.options.selectors.openClass)
-                    .siblings('.' + poi.options.selectors.singlePointClass + '.' + poi.options.selectors.openClass)
-                    .removeClass(poi.options.selectors.openClass)
-                    .addClass(poi.options.selectors.visitedClass);
+            if (poi.point !== null) {
+                if (poi.point.hasClass(poi.options.selectors.openClass)) {
+                    poi.point.removeClass(poi.options.selectors.openClass)
+                        .addClass(poi.options.selectors.visitedClass);
+                } else {
+                    poi.point.addClass(poi.options.selectors.openClass)
+                        .siblings('.' + poi.options.selectors.singlePointClass + '.' + poi.options.selectors.openClass)
+                        .removeClass(poi.options.selectors.openClass)
+                        .addClass(poi.options.selectors.visitedClass);
+                }
             }
         };
 
@@ -294,7 +312,10 @@ if ( typeof define === 'function' && define.amd ) {
             var poi = this;
 
             event.preventDefault();
-            poi.point.switchClass(poi.options.selectors.openClass, poi.options.selectors.visitedClass);
+
+            if (poi.point !== null) {
+                poi.point.switchClass(poi.options.selectors.openClass, poi.options.selectors.visitedClass);
+            }
         };
 
         $.bridget('pointOfInterest', PointOfInterest);
