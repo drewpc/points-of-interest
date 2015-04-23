@@ -116,6 +116,10 @@
                 top: pointLocation.top
             });
 
+            if (poi.target.css('position') === 'fixed') {
+                poi.point.css('position', 'fixed');
+            }
+
             if (poi.options.autoShowPoints === true) {
                 poi.show();
             }
