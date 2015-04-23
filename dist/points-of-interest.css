@@ -35,7 +35,6 @@ Main components
 }
 .cd-single-point > a {
   position: relative;
-  z-index: 30002;
   display: block;
   width: 30px;
   height: 30px;
@@ -46,7 +45,7 @@ Main components
   -moz-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
-.cd-single-point > a::after, .cd-single-point > a:before {
+.cd-single-point > a::after, .cd-single-point > a::before {
   /* rotating plus icon */
   content: '';
   position: absolute;
@@ -75,11 +74,10 @@ Main components
   height: 12px;
   width: 2px;
 }
-.cd-single-point::after {
+.cd-single-point::before {
   /* this is used to create the pulse animation */
   content: '';
   position: absolute;
-  z-index: 30001;
   width: 100%;
   height: 100%;
   top: 0;
@@ -100,7 +98,7 @@ Main components
   -o-transform: translateX(-50%) translateY(-50%) rotate(135deg);
   transform: translateX(-50%) translateY(-50%) rotate(135deg);
 }
-.cd-single-point.is-open::after {
+.cd-single-point.is-open::before {
   /* remove pulse effect */
   display: none;
 }
@@ -119,7 +117,7 @@ Main components
 .cd-single-point.visited > a {
   background-color: #475f74;
 }
-.cd-single-point.visited::after {
+.cd-single-point.visited::before {
   /* pulse effect no more active on visited elements */
   display: none;
 }
@@ -189,7 +187,6 @@ Main components
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30003;
   width: 100%;
   height: 100%;
   overflow-y: auto;

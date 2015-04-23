@@ -41,7 +41,6 @@ Main components
 
 	> a {
 		position: relative;
-		z-index: 30002;
 		display: block;
 		width: 30px;
 		height: 30px;
@@ -50,7 +49,7 @@ Main components
 		box-shadow: 0 0 10px rgba(#000, .3), inset 0 1px 0 rgba($color-5, .3);
 		@include transition(background-color .2s);
 		
-		&::after, &:before {
+		&::after, &::before {
 			/* rotating plus icon */
 			content: '';
 			position: absolute;
@@ -71,11 +70,10 @@ Main components
 		}
 	}
 	
-	&::after {
+	&::before {
 		/* this is used to create the pulse animation */
 		content: '';
 		position: absolute;
-		z-index: 30001;
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -95,7 +93,7 @@ Main components
 			}	
 		}
 
-		&::after {
+		&::before {
 			/* remove pulse effect */
 			display: none;
 		}
@@ -114,7 +112,7 @@ Main components
 			background-color: $color-2;	
 		}
 
-		&::after {
+		&::before {
 			/* pulse effect no more active on visited elements */
 			display: none;
 		}
@@ -163,7 +161,6 @@ Main components
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 30003;
 	width: 100%;
 	height: 100%;
 	overflow-y: auto; 

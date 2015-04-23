@@ -260,6 +260,8 @@ if ( typeof define === 'function' && define.amd ) {
                 poi.point.css('position', 'fixed');
             }
 
+            poi.point.css('z-index', poi.target.css('z-index') + 1);
+
             if (poi.options.autoShowPoints === true) {
                 poi.show();
             }
