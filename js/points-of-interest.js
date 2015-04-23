@@ -126,7 +126,7 @@
             if (zIndex === "auto") {
                 zIndex = 1;
             } else {
-                zIndex += 1;
+                zIndex = parseInt(zIndex) + 1;
             }
             console.log("point.z-index = " + zIndex);
             poi.point.css('z-index', zIndex);
