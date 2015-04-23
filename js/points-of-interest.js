@@ -54,7 +54,8 @@
                 imgs,
                 targetLocation,
                 pointLocation,
-                pointLocationWords;
+                pointLocationWords,
+                zIndex;
 
             if (poi.target === null || poi.point === null) {
                 return;
@@ -120,7 +121,15 @@
                 poi.point.css('position', 'fixed');
             }
 
-            poi.point.css('z-index', poi.target.css('z-index') + 1);
+            zIndex = poi.target.css('z-index');
+            console.log("target.z-index = " + zIndex);
+            if (zIndex === "auto") {
+                zIndex = 1;
+            } else {
+                zIndex += 1;
+            }
+            console.log("point.z-index = " + zIndex);
+            poi.point.css('z-index', zIndex);
 
             if (poi.options.autoShowPoints === true) {
                 poi.show();
