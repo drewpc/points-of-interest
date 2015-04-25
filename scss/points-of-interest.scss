@@ -121,8 +121,16 @@ Main components
 	@include MQ(S) {
 
 		&.is-open .cd-more-info {
-			
-			&.cd-left { 
+
+            &.cd-corner-left {
+                right: 140%;
+            }
+
+            &.cd-corner-right {
+                left: 140%;
+            }
+
+			&.cd-left {
 				right: 140%;
 			}
 
@@ -201,7 +209,64 @@ Main components
 			display: block;
 		}
 
-		&.cd-left, &.cd-right {
+        &.cd-corner-left {
+            right: 160%;
+            left: auto;
+
+            &::before {
+                border-left-color: $gradient-color1;
+                left: 100%;
+            }
+        }
+
+        &.cd-center {
+            @include center(x);
+
+            &::before {
+                @include center(x);
+            }
+        }
+
+        &.cd-corner-right {
+            left: 160%;
+
+            &::before {
+                border-right-color: $gradient-color1;
+                right: 100%;
+            }
+        }
+
+        &.cd-corner-top {
+            top: 5%;
+            @include transform(translateY(-5%));
+
+            &::before {
+                //border-top-color: $gradient-color1;
+                @include transform(translateY(-5%));
+            }
+        }
+
+        &.cd-middle {
+            @include center(y);
+
+            &::before {
+                @include center(y);
+            }
+        }
+
+        &.cd-corner-bottom {
+            bottom: -5%;
+            top: auto;
+            @include transform(translateY(5%));
+
+            &::before {
+                //border-bottom-color: $gradient-color1;
+                bottom: 9%;
+                @include transform(translateY(5%));
+            }
+        }
+
+        &.cd-left, &.cd-right {
 			@include center(y);
 
 			&::before {

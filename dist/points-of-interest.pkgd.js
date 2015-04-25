@@ -262,13 +262,11 @@ if ( typeof define === 'function' && define.amd ) {
             }
 
             zIndex = poi.target.css('z-index');
-            console.log("target.z-index = " + zIndex);
             if (zIndex === "auto") {
-                zIndex = 1;
+                zIndex = 30000;
             } else {
                 zIndex = parseInt(zIndex) + 1;
             }
-            console.log("point.z-index = " + zIndex);
             poi.point.css('z-index', zIndex);
 
             if (poi.options.autoShowPoints === true) {
