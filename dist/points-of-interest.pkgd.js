@@ -197,13 +197,16 @@ if ( typeof define === 'function' && define.amd ) {
                 pointLocationWords,
                 zIndex;
 
-            if (poi.target === null || poi.point === null) {
+            if (poi.target === null || poi.point === null ||
+                (poi.target !== null && !poi.target.is(':visible'))) {
+                poi.hide();
                 return;
             } else {
                 targetLocation = poi.target.offset();
                 pointLocation = poi.point.offset();
                 pointLocationWords = poi.point.data(poi.options.dataValues.pointLocation).split(" ");
             }
+
 
             targetLocation.width = poi.target.outerWidth(false);
             targetLocation.height = poi.target.outerHeight(false);
@@ -269,6 +272,7 @@ if ( typeof define === 'function' && define.amd ) {
             }
             poi.point.css('z-index', zIndex);
 
+
             if (poi.options.autoShowPoints === true) {
                 poi.show();
             }
@@ -288,11 +292,7 @@ if ( typeof define === 'function' && define.amd ) {
             var poi = this;
 
             if (poi.point !== null) {
-                if (poi.target !== null && poi.target.is(':visible')) {
-                    poi.point.show();
-                } else {
-                    poi.hide();
-                }
+                poi.point.show();
             }
         };
 
