@@ -147,8 +147,12 @@
             "use strict";
             var poi = this;
 
-            if (poi.point !== null && poi.target !== null && poi.target.is(':visible')) {
-                poi.point.show();
+            if (poi.point !== null) {
+                if (poi.target !== null && poi.target.is(':visible')) {
+                    poi.point.show();
+                } else {
+                    poi.hide();
+                }
             }
         };
 
