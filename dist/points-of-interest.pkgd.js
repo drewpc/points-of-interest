@@ -263,7 +263,7 @@ if ( typeof define === 'function' && define.amd ) {
             pointLocation.top -= pointLocation.height / 2;
 
             pointOffset = poi.point.data(poi.options.dataValues.pointOffset);
-            if (pointOffset !== null) {
+            if (pointOffset !== undefined && pointOffset !== null) {
                 pointOffset = pointOffset.split(",");
                 if (pointOffset.length === 2) {
                     pointLocation.left += parseInt(pointOffset[0], 10);
