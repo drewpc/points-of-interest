@@ -17,6 +17,7 @@
 	<header>
 		<h1>Points of Interest</h1>
 	</header>
+    <BUTTON ID="togglePOI">Toggle Points of Interest</BUTTON>
     <div class="cd-product cd-container">
         <div ID="myImage" class="cd-product-wrapper">
             <img src="img/cd-app-image.jpg" alt="Preview image">
@@ -111,6 +112,16 @@
     jQuery(document).ready(function ($) {
         var points = $('.cd-single-point');
         points.pointOfInterest();
+
+        var toggle = $('#togglePOI');
+        toggle.on('click', function () {
+            points.each(function () {
+                var $point = $(this);
+                    poi = $point.data('pointOfInterest');
+
+                poi.toggleOnOff();
+            });
+        });
     });
 </SCRIPT>
 </body>

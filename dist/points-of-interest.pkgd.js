@@ -151,6 +151,7 @@ if ( typeof define === 'function' && define.amd ) {
             poi.point = $(pointElement);
             poi.target = null;
             poi.targetRefreshCount = 0;
+            poi.isOn = true;
             poi.options = $.extend(true, {}, poi.options, options);
             poi._init();
         }
@@ -185,6 +186,10 @@ if ( typeof define === 'function' && define.amd ) {
 
                 poi.setPointLocation();
                 poi.registerPointEvents();
+
+                if (poi.options.autoShowPoints === true) {
+                    poi.on();
+                }
             }
         };
 
@@ -273,7 +278,7 @@ if ( typeof define === 'function' && define.amd ) {
             poi.point.css('z-index', zIndex);
 
 
-            if (poi.options.autoShowPoints === true) {
+            if (poi.isOn === true) {
                 poi.show();
             }
         };
@@ -291,8 +296,36 @@ if ( typeof define === 'function' && define.amd ) {
             "use strict";
             var poi = this;
 
-            if (poi.point !== null) {
+            //if (poi.point !== null) {
+            if (poi.isOn === true && poi.point !== null && poi.target !== null && poi.target.is(':visible')) {
                 poi.point.show();
+            }
+        };
+
+        PointOfInterest.prototype.on = function () {
+            "use strict";
+            var poi = this;
+
+            poi.isOn = true;
+            poi.show();
+        };
+
+        PointOfInterest.prototype.off = function () {
+            "use strict";
+            var poi = this;
+
+            poi.isOn = false;
+            poi.hide();
+        };
+
+        PointOfInterest.prototype.toggleOnOff = function () {
+            "use strict";
+            var poi = this;
+
+            if (poi.isOn === true) {
+                poi.off();
+            } else {
+                poi.on();
             }
         };
 
