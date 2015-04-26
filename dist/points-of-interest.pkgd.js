@@ -167,7 +167,8 @@ if ( typeof define === 'function' && define.amd ) {
             },
             dataValues: {
                 'target': 'cd-target',
-                'pointLocation': 'cd-point-location'
+                'pointLocation': 'cd-point-location',
+                'pointOffset': 'cd-point-offset'
             },
             pointLocation: "right top",
             waitForImageLoad: true,
@@ -200,6 +201,7 @@ if ( typeof define === 'function' && define.amd ) {
                 targetLocation,
                 pointLocation,
                 pointLocationWords,
+                pointOffset,
                 zIndex;
 
             if (poi.target === null || poi.point === null ||
@@ -259,6 +261,15 @@ if ( typeof define === 'function' && define.amd ) {
 
             pointLocation.left -= pointLocation.width / 2;
             pointLocation.top -= pointLocation.height / 2;
+
+            pointOffset = poi.point.data(poi.options.dataValues.pointOffset);
+            if (pointOffset !== null) {
+                pointOffset = pointOffset.split(",");
+                if (pointOffset.length === 2) {
+                    pointLocation.left += parseInt(pointOffset[0], 10);
+                    pointLocation.top += parseInt(pointOffset[1], 10);
+                }
+            }
 
             poi.point.offset({
                 left: pointLocation.left,

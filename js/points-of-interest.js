@@ -27,7 +27,8 @@
             },
             dataValues: {
                 'target': 'cd-target',
-                'pointLocation': 'cd-point-location'
+                'pointLocation': 'cd-point-location',
+                'pointOffset': 'cd-point-offset'
             },
             pointLocation: "right top",
             waitForImageLoad: true,
@@ -60,6 +61,7 @@
                 targetLocation,
                 pointLocation,
                 pointLocationWords,
+                pointOffset,
                 zIndex;
 
             if (poi.target === null || poi.point === null ||
@@ -119,6 +121,15 @@
 
             pointLocation.left -= pointLocation.width / 2;
             pointLocation.top -= pointLocation.height / 2;
+
+            pointOffset = poi.point.data(poi.options.dataValues.pointOffset);
+            if (pointOffset !== null) {
+                pointOffset = pointOffset.split(",");
+                if (pointOffset.length === 2) {
+                    pointLocation.left += parseInt(pointOffset[0], 10);
+                    pointLocation.top += parseInt(pointOffset[1], 10);
+                }
+            }
 
             poi.point.offset({
                 left: pointLocation.left,
