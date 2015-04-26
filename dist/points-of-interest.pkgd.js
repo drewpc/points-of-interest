@@ -334,8 +334,8 @@ if ( typeof define === 'function' && define.amd ) {
             var poi = this;
 
             if (poi.point !== null) {
-                $(window).on('resize', poi.setPointLocation.bind(poi));
-                poi.target.on('resize drag transitionend animationend', poi.setPointLocation.bind(poi));
+                $(window).on('resize poi.set-point-location', poi.setPointLocation.bind(poi));
+                poi.target.on('resize drag transitionend animationend poi.set-point-location', poi.setPointLocation.bind(poi));
                 poi.point.on('poi.set-point-location', poi.setPointLocation.bind(poi));
                 poi.point.children('a').on('click', poi.pointOpenEvent.bind(poi));
                 poi.point.find('.' + poi.options.selectors.closeClass).on('click', poi.pointCloseEvent.bind(poi));
