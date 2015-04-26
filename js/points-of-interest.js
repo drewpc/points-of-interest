@@ -125,7 +125,7 @@
                 top: pointLocation.top
             });
 
-            if (poi.target.css('position') === 'fixed') {
+            if (poi.target.css('position') === 'fixed' || poi.target.offsetParent().css('position') === 'fixed') {
                 poi.point.css('position', 'fixed');
             }
 
