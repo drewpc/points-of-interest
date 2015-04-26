@@ -48,7 +48,7 @@
                 poi.registerPointEvents();
 
                 if (poi.options.autoShowPoints === true) {
-                    poi.on();
+                    poi.turnOn();
                 }
             }
         };
@@ -162,7 +162,7 @@
             }
         };
 
-        PointOfInterest.prototype.on = function () {
+        PointOfInterest.prototype.turnOn = function () {
             "use strict";
             var poi = this;
 
@@ -170,7 +170,7 @@
             poi.show();
         };
 
-        PointOfInterest.prototype.off = function () {
+        PointOfInterest.prototype.turnOff = function () {
             "use strict";
             var poi = this;
 
@@ -183,9 +183,9 @@
             var poi = this;
 
             if (poi.isOn === true) {
-                poi.off();
+                poi.turnOff();
             } else {
-                poi.on();
+                poi.turnOn();
             }
         };
 

@@ -188,7 +188,7 @@ if ( typeof define === 'function' && define.amd ) {
                 poi.registerPointEvents();
 
                 if (poi.options.autoShowPoints === true) {
-                    poi.on();
+                    poi.turnOn();
                 }
             }
         };
@@ -302,7 +302,7 @@ if ( typeof define === 'function' && define.amd ) {
             }
         };
 
-        PointOfInterest.prototype.on = function () {
+        PointOfInterest.prototype.turnOn = function () {
             "use strict";
             var poi = this;
 
@@ -310,7 +310,7 @@ if ( typeof define === 'function' && define.amd ) {
             poi.show();
         };
 
-        PointOfInterest.prototype.off = function () {
+        PointOfInterest.prototype.turnOff = function () {
             "use strict";
             var poi = this;
 
@@ -323,9 +323,9 @@ if ( typeof define === 'function' && define.amd ) {
             var poi = this;
 
             if (poi.isOn === true) {
-                poi.off();
+                poi.turnOff();
             } else {
-                poi.on();
+                poi.turnOn();
             }
         };
 
