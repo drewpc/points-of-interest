@@ -151,7 +151,7 @@ if ( typeof define === 'function' && define.amd ) {
             poi.point = $(pointElement);
             poi.target = null;
             poi.targetRefreshCount = 0;
-            poi.isOn = true;
+            poi.isOn = false;
             poi.options = $.extend(true, {}, poi.options, options);
             poi._init();
         }
